@@ -25,11 +25,15 @@ function App() {
             <img src={user.picture.large} alt={`User ${index + 1}`} className="avatar" />
             <div className={`card-content ${expandedUsers.includes(index) ? 'expanded' : ''}`}>
               <h3>{`${user.name.first} ${user.name.last}`}</h3>
+              <p>Email: {user.email}</p>
+              <p>Titre: {user.name.title}</p>
               {expandedUsers.includes(index) && (
                 <>
-                  <p>Email: {user.email}</p>
+                <p>-------------------------------------------------------------------------------</p>
+                  <p>Numéro de rue: {user.location.street.number}</p>
+                  <p>Ville: {user.location.city}</p>
                   <p>Nationalité: {user.nat}</p>
-                  <p>Âge: {user.dob.age}</p>
+                  <p>Téléphone: {user.phone}</p>
                 </>
               )}
               <button onClick={() => toggleExpand(index)} className="expand-button">
